@@ -20,7 +20,7 @@ const navItems = [
   { label: "Perfil", icon: User, href: "/profile" },
 ];
 
-export function DashboardLayout({ children }: { children: React.ReactNode }) {
+export function DashboardLayout({ children, title = "Dashboard" }: { children: React.ReactNode; title?: string }) {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
@@ -111,7 +111,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
       <div className="flex-1 flex flex-col min-w-0">
         {/* Top Bar */}
         <header className="h-16 border-b border-border flex items-center justify-between px-6 bg-card/50 backdrop-blur-sm flex-shrink-0">
-          <h1 className="font-display font-semibold text-lg text-foreground">Dashboard</h1>
+          <h1 className="font-display font-semibold text-lg text-foreground">{title}</h1>
           <div className="flex items-center gap-3">
             <ThemeToggle />
             <div className="w-9 h-9 rounded-full gradient-bg flex items-center justify-center text-primary-foreground text-sm font-semibold">
